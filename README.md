@@ -68,3 +68,40 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+---
+
+## Backend (Flask) - Local Development
+
+This repository includes a minimal Flask backend inside `backend/` that serves a small sample dataset for local development and testing.
+
+Run the backend locally:
+
+Windows (PowerShell):
+```powershell
+cd backend
+python -m venv .venv; .\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python app.py
+```
+
+The backend listens on `http://localhost:5000` and exposes these endpoints:
+- `GET /api/data` - returns a list of sample properties (id/title/city/price)
+- `GET /api/filter/<column>/<value>` - filters the dataset by column and value
+
+From the React dev server you can call the API directly (CORS is enabled in development), or add a proxy to `package.json` like:
+
+```json
+	"proxy": "http://localhost:5000"
+```
+
+Then call `/api/data` without specifying the host in your front-end code.
+
+### Try it: Navigate to property details
+
+1. Start backend: `python backend/app.py`
+2. Start frontend: `npm start`
+3. Open `http://localhost:3000/property` to view the property list.
+4. Click a property card to view the detailed property page. The property route is `/property/:id` and will show a detailed layout including images, price, stats and features.
+
+---

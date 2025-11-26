@@ -1,0 +1,53 @@
+.pageRoot { width: 100%; padding: 20px 40px; }
+
+.grid { display: grid; grid-template-columns: 1fr 320px; gap: 24px; align-items: start; }
+
+.mainCol { display: flex; gap: 20px; flex-direction: column; }
+
+.gallery { width: 100%; border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 8px 18px rgba(25, 20, 60, 0.05); }
+
+.mainImage { width: 100%; height: 420px; object-fit: cover; display: block; }
+
+.galleryGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; padding: 8px; }
+
+.galleryImage { width: 100%; height: 80px; object-fit: cover; border-radius: 6px; }
+
+.summaryCard { background: #fff; padding: 18px; border-radius: 8px; box-shadow: 0 8px 18px rgba(25, 20, 60, 0.04); }
+
+.metaTop { display: flex; gap: 20px; justify-content: space-between; align-items: flex-start; }
+
+.titleWrap { text-align: left; }
+.title { margin: 0; font-size: 1.6rem; color: #1b1b1b; }
+.address { margin-top: 6px; color: #666; }
+
+.priceWrap { text-align: right; min-width: 180px; }
+.price { color: #2a2a72; font-weight: 800; font-size: 1.3rem; }
+.metaRow { color: #666; font-size: 0.95rem; }
+.keyDates { margin-top: 8px; color: #8b8b8b; font-size: 0.9rem; }
+
+.tagsRow { display: flex; gap: 10px; margin-top: 12px; }
+.tag { background: linear-gradient(90deg,#ede9ff,#f2f0ff); color: #4b2bce; font-weight: 600; padding: 6px 10px; border-radius: 16px; }
+
+.featuresSection { margin-top: 14px; }
+.sectionTitle { margin: 0 0 8px 0; font-size: 1rem; color: #333; }
+.featuresGrid { display: flex; gap: 8px; flex-wrap: wrap; }
+.featureItem { background: #fff6ef; padding: 8px 12px; border: 1px solid #ffe8c8; border-radius: 8px; color: #ad5b00; }
+.noFeatures { color: #888; }
+.aboutSection { margin-top: 14px; }
+.description { color: #444; line-height: 1.6; }
+
+.sideCol { display: flex; flex-direction: column; gap: 18px; }
+.sideCard { background: #fff; padding: 16px; border-radius: 8px; box-shadow: 0 8px 18px rgba(25, 20, 60, 0.04); }
+.sideTitle { margin: 0 0 8px 0; font-size: 1rem; color: #333; }
+.detailList { margin: 0; padding: 0; }
+.detailRow { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed #eee; }
+.detailRow dt { color: #666; font-weight: 600; }
+.detailRow dd { margin: 0; color: #333; }
+
+.contactWrap { display: flex; justify-content: center; margin-top: 12px; }
+.contactBtn { background: #4B2BCE; color: #fff; border: none; padding: 10px 14px; border-radius: 8px; cursor: pointer; }
+
+@media screen and (max-width: 920px) {
+  .grid { grid-template-columns: 1fr; }
+  .priceWrap { text-align: left; }
+}

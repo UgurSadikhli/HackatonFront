@@ -7,9 +7,13 @@ import { useLocation } from 'react-router-dom';
 
 const sampleArray = [
     {
+    id: 1,
         name: "Sample Appartment A",
         location: "Downtown Sample City",
         image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
+      images: ["https://images.unsplash.com/photo-1545017861-43f97a6f41c0","https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"],
+      price: 120000,
+      beds: 2, baths: 1,
         number_of_units: 12,
         pipelines: "short",
         key_dates: {
@@ -20,9 +24,13 @@ const sampleArray = [
         description: "Bright units close to public transport and local amenities."
     },
     {
+      id: 2,
         name: "Sample Appartment B",
         location: "Riverside Sample City",
        image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
+      images: ["https://images.unsplash.com/photo-1507089947368-19c1da9775ae"],
+      price: 350000,
+      beds: 4, baths: 3,
         number_of_units: 8,
         pipelines: "medium",
         key_dates: {
@@ -33,9 +41,13 @@ const sampleArray = [
         description: "Quiet riverside location with modern finishes."
     },
     {
+      id: 3,
         name: "Sample Appartment C",
         location: "Uptown Sample City",
  image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
+      images: ["https://images.unsplash.com/photo-1505691723518-36a4e6d5f7ef"],
+      price: 80000,
+      beds: 3, baths: 2,
         number_of_units: 20,
         pipelines: "long",
         key_dates: {
@@ -46,6 +58,9 @@ const sampleArray = [
         description: "Large development ideal for families and long-term tenants."
     },
     {
+      id: 4,
+          price: 85000,
+          beds: 2, baths: 1,
         name: "Sample Appartment D",
         location: "Market District",
  image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
@@ -60,6 +75,9 @@ const sampleArray = [
         description: "Cozy boutique building steps from the market and cafes."
     },
     {
+      id: 5,
+          price: 150000,
+          beds: 4, baths: 2,
         name: "Sample Appartment E",
         location: "Hillview",
  image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
@@ -74,6 +92,9 @@ const sampleArray = [
         description: "Scenic views with recently renovated common areas."
     },
     {
+      id: 6,
+          price: 99000,
+          beds: 3, baths: 1,
         name: "Sample Appartment F",
         location: "Garden Quarter",
       image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
@@ -88,6 +109,9 @@ const sampleArray = [
         description: "Green courtyard and family-friendly layout."
     },
     {
+      id: 7,
+          price: 500000,
+          beds: 6, baths: 4,
         name: "Sample Appartment G",
         location: "Tech Park",
  image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
@@ -102,6 +126,9 @@ const sampleArray = [
         description: "High-density complex popular with professionals."
     },
     {
+      id: 8,
+          price: 75000,
+          beds: 2, baths: 1,
         name: "Sample Appartment H",
         location: "Harborfront",
  image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
@@ -116,6 +143,9 @@ const sampleArray = [
         description: "Small waterfront property currently awaiting permit approvals."
     },
     {
+      id: 9,
+          price: 68000,
+          beds: 1, baths: 1,
         name: "Sample Appartment I",
         location: "Old Town",
  image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
@@ -130,6 +160,9 @@ const sampleArray = [
         description: "Historic building with character and upgraded utilities."
     },
     {
+      id: 10,
+          price: 210000,
+          beds: 5, baths: 3,
         name: "Sample Appartment J",
         location: "University District",
  image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
@@ -144,6 +177,9 @@ const sampleArray = [
         description: "Convenient for students with shared and private units."
     },
     {
+      id: 11,
+          price: 40000,
+          beds: 1, baths: 1,
         name: "Sample Appartment K",
         location: "Industrial Edge",
  image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
@@ -158,6 +194,9 @@ const sampleArray = [
         description: "Adaptive reuse of warehouse space into loft-style apartments."
     },
     {
+      id: 12,
+          price: 130000,
+          beds: 3, baths: 2,
         name: "Sample Appartment L",
         location: "Suburban Meadows",
  image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",

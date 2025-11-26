@@ -29,6 +29,7 @@ border-radius: 10px;
 background: #fff;
 max-width: 700px;
 }
+.card:hover { cursor: pointer; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(20, 20, 60, 0.06); transition: transform 120ms ease; }
 
 
 .image {

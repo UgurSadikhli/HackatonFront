@@ -37,6 +37,14 @@ function PropertyDetails() {
     fetch(`${API_BASE}/properties/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error('Network response was not ok');
+        // Verify JSON content-type before parsing
+        const ct = res.headers.get('content-type') || '';
+        if (!ct.toLowerCase().includes('application/json')) {
+          // Extract text to help debugging (often returns HTML index page)
+          return res.text().then((text) => {
+            throw new Error('Expected JSON response from API but received: ' + (text ? text.substring(0, 240) : 'empty response'));
+          });
+        }
         return res.json();
       })
       .then((data) => {

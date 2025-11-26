@@ -16,8 +16,8 @@ function Navigation() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/about" className="nav-link">
-              About
+            <Link to="/property" className="nav-link">
+              Filter
             </Link>
           </li>
           <li className="nav-item">

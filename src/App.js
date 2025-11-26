@@ -9,6 +9,7 @@ import SearchResults from './pages/SearchResults';
 import PropertyDetails from './pages/PropertyDetails';
 import Valuation from './pages/Valuation';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Property from './pages/Property';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/search" element={<SearchResults />} />
         <Route path="/property/:id" element={<PropertyDetails />} />
         <Route path="/valuation" element={<Valuation />} />
+        <Route path="/property" element={<Property />} />
       </Routes>
     </BrowserRouter>
   );

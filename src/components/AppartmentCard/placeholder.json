@@ -1,0 +1,98 @@
+[
+    {
+        "name": "Sample Appartment A",
+        "location": "Downtown Sample City",
+        "image": "https://example.com/images/sample-a.jpg",
+        "number_of_units": 12,
+        "pipelines": "short",
+        "description": "Bright units close to public transport and local amenities."
+    },
+    {
+        "name": "Sample Appartment B",
+        "location": "Riverside Sample City",
+        "image": "https://example.com/images/sample-b.jpg",
+        "number_of_units": 8,
+        "pipelines": "medium",
+        "description": "Quiet riverside location with modern finishes."
+    },
+    {
+        "name": "Sample Appartment C",
+        "location": "Uptown Sample City",
+        "image": "https://example.com/images/sample-c.jpg",
+        "number_of_units": 20,
+        "pipelines": "long",
+        "description": "Large development ideal for families and long-term tenants."
+    },
+    {
+        "name": "Sample Appartment D",
+        "location": "Market District",
+        "image": "https://example.com/images/sample-d.jpg",
+        "number_of_units": 6,
+        "pipelines": "short",
+        "description": "Cozy boutique building steps from the market and cafes."
+    },
+    {
+        "name": "Sample Appartment E",
+        "location": "Hillview",
+        "image": "https://example.com/images/sample-e.jpg",
+        "number_of_units": 15,
+        "pipelines": "in-progress",
+        "description": "Scenic views with recently renovated common areas."
+    },
+    {
+        "name": "Sample Appartment F",
+        "location": "Garden Quarter",
+        "image": "https://example.com/images/sample-f.jpg",
+        "number_of_units": 9,
+        "pipelines": "short",
+        "description": "Green courtyard and family-friendly layout."
+    },
+    {
+        "name": "Sample Appartment G",
+        "location": "Tech Park",
+        "image": "https://example.com/images/sample-g.jpg",
+        "number_of_units": 30,
+        "pipelines": "long",
+        "description": "High-density complex popular with professionals."
+    },
+    {
+        "name": "Sample Appartment H",
+        "location": "Harborfront",
+        "image": "https://example.com/images/sample-h.jpg",
+        "number_of_units": 5,
+        "pipelines": "stalled",
+        "description": "Small waterfront property currently awaiting permit approvals."
+    },
+    {
+        "name": "Sample Appartment I",
+        "location": "Old Town",
+        "image": "https://example.com/images/sample-i.jpg",
+        "number_of_units": 7,
+        "pipelines": "medium",
+        "description": "Historic building with character and upgraded utilities."
+    },
+    {
+        "name": "Sample Appartment J",
+        "location": "University District",
+        "image": "https://example.com/images/sample-j.jpg",
+        "number_of_units": 18,
+        "pipelines": "short",
+        "description": "Convenient for students with shared and private units."
+    },
+    {
+        "name": "Sample Appartment K",
+        "location": "Industrial Edge",
+        "image": "https://example.com/images/sample-k.jpg",
+        "number_of_units": 4,
+        "pipelines": "in-progress",
+        "description": "Adaptive reuse of warehouse space into loft-style apartments."
+    },
+    {
+        "name": "Sample Appartment L",
+        "location": "Suburban Meadows",
+        "image": "https://example.com/images/sample-l.jpg",
+        "number_of_units": 22,
+        "pipelines": "short",
+        "description": "Family-oriented complex with parking and playgrounds."
+    }
+]

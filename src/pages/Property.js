@@ -4,6 +4,7 @@ import styles from './Property.module.css';
 import AppartmentCard from '../components/AppartmentCard/AppartmentCard';
 import Header from '../components/Header/Header';
 import { useLocation } from 'react-router-dom';
+
 const sampleArray = [
     {
     id: 1,
@@ -15,7 +16,11 @@ const sampleArray = [
       beds: 2, baths: 1,
         number_of_units: 12,
         pipelines: "short",
-        key_dates: ["2023", "2024"],
+        key_dates: {
+            enablingWorksStart: "2/26/2026  12:00:00 AM",
+            housingStart: "3/15/2026  12:00:00 AM",
+            projectCompletion: "12/20/2027  12:00:00 AM"
+        },
         description: "Bright units close to public transport and local amenities."
     },
     {
@@ -28,7 +33,11 @@ const sampleArray = [
       beds: 4, baths: 3,
         number_of_units: 8,
         pipelines: "medium",
-        key_dates: ["2022", "2025"],
+        key_dates: {
+            enablingWorksStart: "1/10/2026  12:00:00 AM",
+            housingStart: "4/05/2026  12:00:00 AM",
+            projectCompletion: "11/30/2027  12:00:00 AM"
+        },
         description: "Quiet riverside location with modern finishes."
     },
     {
@@ -41,7 +50,11 @@ const sampleArray = [
       beds: 3, baths: 2,
         number_of_units: 20,
         pipelines: "long",
-        key_dates: ["2021", "2023"],
+        key_dates: {
+            enablingWorksStart: "3/01/2026  12:00:00 AM",
+            housingStart: "6/15/2026  12:00:00 AM",
+            projectCompletion: "06/30/2028  12:00:00 AM"
+        },
         description: "Large development ideal for families and long-term tenants."
     },
     {
@@ -53,7 +66,12 @@ const sampleArray = [
  image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 6,
         pipelines: "short",
-        key_dates: ["2020", "2024"],
+         key_dates: {
+            enablingWorksStart: "2/26/2026  12:00:00 AM",
+            housingStart: "3/20/2026  12:00:00 AM",
+            projectCompletion: "01/15/2027  12:00:00 AM"
+        },
+
         description: "Cozy boutique building steps from the market and cafes."
     },
     {
@@ -65,7 +83,12 @@ const sampleArray = [
  image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 15,
         pipelines: "in-progress",
-        key_dates: ["2023", "2026"],
+        key_dates: {
+            enablingWorksStart: "05/10/2025  12:00:00 AM",
+            housingStart: "08/01/2025  12:00:00 AM",
+            projectCompletion: "05/20/2027  12:00:00 AM"
+        },
+
         description: "Scenic views with recently renovated common areas."
     },
     {
@@ -77,7 +100,12 @@ const sampleArray = [
       image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 9,
         pipelines: "short",
-        key_dates: ["2022", "2024"],
+             key_dates: {
+            enablingWorksStart: "2/26/2026  12:00:00 AM",
+            housingStart: "3/15/2026  12:00:00 AM",
+            projectCompletion: "12/20/2027  12:00:00 AM"
+        },
+
         description: "Green courtyard and family-friendly layout."
     },
     {
@@ -89,7 +117,12 @@ const sampleArray = [
  image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 30,
         pipelines: "long",
-        key_dates: ["2021", "2027"],
+          key_dates: {
+            enablingWorksStart: "4/01/2026  12:00:00 AM",
+            housingStart: "7/15/2026  12:00:00 AM",
+            projectCompletion: "08/31/2028  12:00:00 AM"
+        },
+
         description: "High-density complex popular with professionals."
     },
     {
@@ -101,7 +134,12 @@ const sampleArray = [
  image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 5,
         pipelines: "stalled",
-        key_dates: ["2020", "2023"],
+            key_dates: {
+            enablingWorksStart: "09/15/2025  12:00:00 AM",
+            housingStart: "12/01/2025  12:00:00 AM",
+            projectCompletion: "09/30/2027  12:00:00 AM"
+        },
+
         description: "Small waterfront property currently awaiting permit approvals."
     },
     {
@@ -113,7 +151,12 @@ const sampleArray = [
  image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 7,
         pipelines: "medium",
-        key_dates: ["2019", "2022"],
+        key_dates: {
+            enablingWorksStart: "12/15/2025  12:00:00 AM",
+            housingStart: "03/10/2026  12:00:00 AM",
+            projectCompletion: "10/20/2027  12:00:00 AM"
+        },
+
         description: "Historic building with character and upgraded utilities."
     },
     {
@@ -125,7 +168,12 @@ const sampleArray = [
  image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 18,
         pipelines: "short",
-        key_dates: ["2022", "2023"],
+        key_dates: {
+            enablingWorksStart: "2/26/2026  12:00:00 AM",
+            housingStart: "3/15/2026  12:00:00 AM",
+            projectCompletion: "12/20/2027  12:00:00 AM"
+        },
+
         description: "Convenient for students with shared and private units."
     },
     {
@@ -137,7 +185,12 @@ const sampleArray = [
  image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 4,
         pipelines: "in-progress",
-        key_dates: ["2023", "2026"],
+              key_dates: {
+            enablingWorksStart: "06/01/2025  12:00:00 AM",
+            housingStart: "09/15/2025  12:00:00 AM",
+            projectCompletion: "06/30/2027  12:00:00 AM"
+        },
+
         description: "Adaptive reuse of warehouse space into loft-style apartments."
     },
     {
@@ -149,7 +202,12 @@ const sampleArray = [
  image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 22,
         pipelines: "short",
-        key_dates: ["2020", "2024"],
+        key_dates: {
+            enablingWorksStart: "2/26/2026  12:00:00 AM",
+            housingStart: "3/15/2026  12:00:00 AM",
+            projectCompletion: "12/20/2027  12:00:00 AM"
+        },
+
         description: "Family-oriented complex with parking and playgrounds."
     }
 ];

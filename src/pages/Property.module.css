@@ -9,24 +9,29 @@
     display: flex;
     flex-direction: row;
     gap: 2vw;
+    align-items: center;
+    justify-content: center;
 }
 
 .filterBox{
     max-height: 80vh;
     width: fit-content;
     overflow-y: auto;
-    padding: 20px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     gap: 16px;
     border-radius: 12px;
     height: fit-content;
+    background-color: transparent;
 }
 
 .filterBoxMain{
-        display: flex;
+    display: flex;
+    background-color: transparent;
+
     flex-direction: column;
-    max-height: 80vh;
+    max-height: 75vh;
     width: fit-content;
     overflow-y: auto;
     padding: 20px;
@@ -80,3 +85,21 @@
   align-items: center;
   gap: 10px;
 }
+
+.submitButton {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submitButton:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+  transform: translateY(-2px); /* subtle lift */
+}
+

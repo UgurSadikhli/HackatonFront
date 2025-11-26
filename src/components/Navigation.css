@@ -1,5 +1,5 @@
 .navbar {
-  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   height: 80px;
   display: flex;
   justify-content: center;
@@ -8,7 +8,8 @@
   position: sticky;
   top: 0;
   z-index: 999;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.15);
+  backdrop-filter: blur(10px);
 }
 
 .nav-container {
@@ -24,14 +25,35 @@
   color: #fff;
   cursor: pointer;
   text-decoration: none;
-  font-size: 2rem;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  font-size: 1.8rem;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: -0.5px;
+}
+
+.logo-icon {
+  font-size: 1.6rem;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
 }
 
 .nav-logo:hover {
-  transform: scale(1.05);
+  transform: translateY(-3px);
   color: #f0ad4e;
+  text-shadow: 0 8px 16px rgba(240, 173, 78, 0.3);
 }
 
 .nav-menu {
@@ -40,11 +62,12 @@
   text-align: center;
   margin: 0;
   padding: 0;
+  gap: 12px;
 }
 
 .nav-item {
-  line-height: 40px;
-  margin-right: 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .nav-item:last-child {
@@ -54,57 +77,105 @@
 .nav-link {
   color: #fff;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  display: block;
+  padding: 10px 20px;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
 }
 
 .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .nav-link.active {
-  background-color: rgba(255, 255, 255, 0.3);
-  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+}
+
+/* Filter Button Styling */
+.filter-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 24px;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.filter-btn:hover::before {
+  left: 100%;
+}
+
+.filter-icon {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.filter-btn:hover .filter-icon {
+  transform: rotate(20deg) scale(1.1);
+}
+
+.filter-text {
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
 @media screen and (max-width: 768px) {
+  .navbar {
+    height: 70px;
+  }
+
   .nav-container {
     padding: 0 20px;
   }
 
   .nav-logo {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .logo-icon {
+    font-size: 1.2rem;
   }
 
   .nav-menu {
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 80px;
-    left: -100%;
-    opacity: 1;
-    transition: all 0.5s ease;
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-  }
-
-  .nav-menu.active {
-    left: 0;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 1;
-  }
-
-  .nav-item {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    gap: 8px;
   }
 
   .nav-link {
-    width: 100%;
-    display: table;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+  }
+
+  .filter-icon {
+    font-size: 1rem;
   }
 }

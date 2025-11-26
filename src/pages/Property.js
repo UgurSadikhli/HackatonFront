@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Pages.css';
 import styles from './Property.module.css';
 import AppartmentCard from '../components/AppartmentCard/AppartmentCard';
 import Header from '../components/Header/Header';
-
+import { useLocation } from 'react-router-dom';
 const sampleArray = [
     {
         name: "Sample Appartment A",
         location: "Downtown Sample City",
-        image: "https://img.freepik.com/premium-vector/isolated-home-vector-illustration_1076263-25.jpg",
+        image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 12,
         pipelines: "short",
         key_dates: ["2023", "2024"],
@@ -17,7 +17,7 @@ const sampleArray = [
     {
         name: "Sample Appartment B",
         location: "Riverside Sample City",
-        image: "https://img.freepik.com/premium-vector/isolated-home-vector-illustration_1076263-25.jpg",
+       image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 8,
         pipelines: "medium",
         key_dates: ["2022", "2025"],
@@ -26,7 +26,7 @@ const sampleArray = [
     {
         name: "Sample Appartment C",
         location: "Uptown Sample City",
-        image: "https://img.freepik.com/premium-vector/isolated-home-vector-illustration_1076263-25.jpg",
+ image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 20,
         pipelines: "long",
         key_dates: ["2021", "2023"],
@@ -35,7 +35,7 @@ const sampleArray = [
     {
         name: "Sample Appartment D",
         location: "Market District",
-        image: "https://img.freepik.com/premium-vector/isolated-home-vector-illustration_1076263-25.jpg",
+ image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 6,
         pipelines: "short",
         key_dates: ["2020", "2024"],
@@ -44,7 +44,7 @@ const sampleArray = [
     {
         name: "Sample Appartment E",
         location: "Hillview",
-        image: "https://img.freepik.com/premium-vector/isolated-home-vector-illustration_1076263-25.jpg",
+ image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 15,
         pipelines: "in-progress",
         key_dates: ["2023", "2026"],
@@ -53,7 +53,7 @@ const sampleArray = [
     {
         name: "Sample Appartment F",
         location: "Garden Quarter",
-        image: "https://img.freepik.com/premium-vector/isolated-home-vector-illustration_1076263-25.jpg",
+      image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 9,
         pipelines: "short",
         key_dates: ["2022", "2024"],
@@ -62,7 +62,7 @@ const sampleArray = [
     {
         name: "Sample Appartment G",
         location: "Tech Park",
-        image: "https://img.freepik.com/premium-vector/isolated-home-vector-illustration_1076263-25.jpg",
+ image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 30,
         pipelines: "long",
         key_dates: ["2021", "2027"],
@@ -71,7 +71,7 @@ const sampleArray = [
     {
         name: "Sample Appartment H",
         location: "Harborfront",
-        image: "https://img.freepik.com/premium-vector/isolated-home-vector-illustration_1076263-25.jpg",
+ image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 5,
         pipelines: "stalled",
         key_dates: ["2020", "2023"],
@@ -80,7 +80,7 @@ const sampleArray = [
     {
         name: "Sample Appartment I",
         location: "Old Town",
-        image: "https://img.freepik.com/premium-vector/isolated-home-vector-illustration_1076263-25.jpg",
+ image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 7,
         pipelines: "medium",
         key_dates: ["2019", "2022"],
@@ -89,7 +89,7 @@ const sampleArray = [
     {
         name: "Sample Appartment J",
         location: "University District",
-        image: "https://img.freepik.com/premium-vector/isolated-home-vector-illustration_1076263-25.jpg",
+ image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 18,
         pipelines: "short",
         key_dates: ["2022", "2023"],
@@ -98,7 +98,7 @@ const sampleArray = [
     {
         name: "Sample Appartment K",
         location: "Industrial Edge",
-        image: "https://img.freepik.com/premium-vector/isolated-home-vector-illustration_1076263-25.jpg",
+ image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 4,
         pipelines: "in-progress",
         key_dates: ["2023", "2026"],
@@ -107,7 +107,7 @@ const sampleArray = [
     {
         name: "Sample Appartment L",
         location: "Suburban Meadows",
-        image: "https://img.freepik.com/premium-vector/isolated-home-vector-illustration_1076263-25.jpg",
+ image: "https://plus.unsplash.com/premium_vector-1721890983105-625c0d32045f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8fDA%3D",
         number_of_units: 22,
         pipelines: "short",
         key_dates: ["2020", "2024"],
@@ -116,104 +116,143 @@ const sampleArray = [
 ];
 
 
-
 function Property() {
+  const [filters, setFilters] = useState({
+    reference: false,
+    sponsorsDevelopers: false,
+    siteSize: '',
+    revenue: '',
+    greenField: false,
+    brownField: false,
+    placeBasedPipeline: false,
+    sppPriority: false,
+    procurementRoute: false,
+    developerStatus: false,
+    landOwnershipType: false,
+    intervention: false,
+    constraints: false
+  });
+
+  const { search } = useLocation();
+  const params = new URLSearchParams(search);
+  const postcode = params.get('postcode');
+
+  const handleChange = (e) => {
+    const { name, type, checked, value } = e.target;
+    setFilters(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }));
+  };
+
+
+  const handleSubmit = async () => {
+    // try {
+    //   const response = await fetch('https://your-backend-endpoint.com/api/filters', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify(filters)
+    //   });
+    //   const data = await response.json();
+    //   console.log('Backend response:', data);
+    // } catch (error) {
+    //   console.error('Error sending filters:', error);
+    // }
+
+    console.log('Applied Filters:', filters);
+    console.log('Postcode:', postcode);
+
+  };
+
   return (
     <div className={styles.main}>
-        <Header /> 
-        <div className={styles.bottom}>
-             <AppartmentCard dataList={sampleArray} />
-             <div className={styles.filterBoxMain}>
-             <div className={styles.filterBox}>
-                 {/* Category 1 */}
-      <div className={styles.category}>
-        <h3 className={styles.categoryTitle}>Key Details</h3>
+      <Header />
+      <div className={styles.bottom}>
+        <AppartmentCard dataList={sampleArray} />
 
-        <div className={styles.fieldRow}>
-          <label>Reference</label>
-          <input type="checkbox" />
-        </div>
+        <div className={styles.filterBoxMain}>
+          <div className={styles.filterBox}>
+            
+            {/* Category 1 */}
+            <div className={styles.category}>
+              <h3 className={styles.categoryTitle}>Key Details</h3>
 
-        <div className={styles.fieldRow}>
-          <label>Sponsors & Developers</label>
-          <input type="checkbox" />
-        </div>
+              <div className={styles.fieldRow}>
+                <label>Reference</label>
+                <input type="checkbox" name="reference" checked={filters.reference} onChange={handleChange} />
+              </div>
 
-        <div className={styles.fieldRow}>
-          <label>Site Size </label>
-          <input type="text" placeholder="Enter site size" />
-        </div>
+              <div className={styles.fieldRow}>
+                <label>Sponsors & Developers</label>
+                <input type="checkbox" name="sponsorsDevelopers" checked={filters.sponsorsDevelopers} onChange={handleChange} />
+              </div>
 
-        <div className={styles.fieldRow}>
-          <label>Revenue</label>
-          <input type="text" placeholder="Enter revenue" />
-        </div>
-      </div>
+              <div className={styles.fieldRow}>
+                <label>Site Size </label>
+                <input type="text" name="siteSize" value={filters.siteSize} onChange={handleChange} placeholder="Enter site size" />
+              </div>
 
-      {/* Category 2 */}
-      <div className={styles.category}>
-        <h3 className={styles.categoryTitle}>About Area</h3>
+              <div className={styles.fieldRow}>
+                <label>Revenue</label>
+                <input type="text" name="revenue" value={filters.revenue} onChange={handleChange} placeholder="Enter revenue" />
+              </div>
+            </div>
 
-        <div className={styles.fieldRow}>
-          <label>Green/Brown Field</label>
-          <div className={styles.inputs}>
-            <input type="text" placeholder="Enter value" />
-            <input type="checkbox" />
+            {/* Category 2 */}
+            <div className={styles.category}>
+              <h3 className={styles.categoryTitle}>About Area</h3>
+              <div className={styles.fieldRow}>
+                <label>Green Field</label>
+                <input type="checkbox" name="greenField" checked={filters.greenField} onChange={handleChange} />
+              </div>
+              <div className={styles.fieldRow}>
+                <label>Brown Field</label>
+                <input type="checkbox" name="brownField" checked={filters.brownField} onChange={handleChange} />
+              </div>
+              <div className={styles.fieldRow}>
+                <label>Place-based Pipeline</label>
+                <input type="checkbox" name="placeBasedPipeline" checked={filters.placeBasedPipeline} onChange={handleChange} />
+              </div>
+              <div className={styles.fieldRow}>
+                <label>SPP Priority</label>
+                <input type="checkbox" name="sppPriority" checked={filters.sppPriority} onChange={handleChange} />
+              </div>
+              <div className={styles.fieldRow}>
+                <label>Procurement Route</label>
+                <input type="checkbox" name="procurementRoute" checked={filters.procurementRoute} onChange={handleChange} />
+              </div>
+            </div>
+
+            {/* Category 3 */}
+            <div className={styles.category}>
+              <h3 className={styles.categoryTitle}>Ownership</h3>
+              <div className={styles.fieldRow}>
+                <label>Developer Status</label>
+                <input type="checkbox" name="developerStatus" checked={filters.developerStatus} onChange={handleChange} />
+              </div>
+              <div className={styles.fieldRow}>
+                <label>Land Ownership Type</label>
+                <input type="checkbox" name="landOwnershipType" checked={filters.landOwnershipType} onChange={handleChange} />
+              </div>
+            </div>
+
+            {/* Category 4 */}
+            <div className={styles.category}>
+              <h3 className={styles.categoryTitle}>Status</h3>
+              <div className={styles.fieldRow}>
+                <label>Intervention</label>
+                <input type="checkbox" name="intervention" checked={filters.intervention} onChange={handleChange} />
+              </div>
+              <div className={styles.fieldRow}>
+                <label>Constraints</label>
+                <input type="checkbox" name="constraints" checked={filters.constraints} onChange={handleChange} />
+              </div>
+            </div>
+
+            <button onClick={handleSubmit} className={styles.submitButton}>Apply Filters</button>
           </div>
         </div>
-
-        <div className={styles.fieldRow}>
-          <label>Place-based Pipeline </label>
-          <input type="checkbox" />
-        </div>
-
-        <div className={styles.fieldRow}>
-          <label>SPP Priority </label>
-          <input type="checkbox" />
-        </div>
-
-        <div className={styles.fieldRow}>
-          <label>Procurement Route </label>
-          <input type="checkbox" />
-        </div>
       </div>
-
-      {/* Category 3 */}
-      <div className={styles.category}>
-        <h3 className={styles.categoryTitle}>Ownership</h3>
-
-        <div className={styles.fieldRow}>
-          <label>Developer Status </label>
-          <input type="checkbox" />
-        </div>
-
-        <div className={styles.fieldRow}>
-          <label>Land Ownership Type </label>
-          <input type="checkbox" />
-        </div>
-      </div>
-
-      {/* Category 4 */}
-      <div className={styles.category}>
-        <h3 className={styles.categoryTitle}>Status</h3>
-
-        <div className={styles.fieldRow}>
-          <label>Intervention </label>
-          <input type="checkbox" />
-        </div>
-
-        <div className={styles.fieldRow}>
-          <label>Constraints </label>
-          <input type="checkbox" />
-        </div>
-      </div>
-             </div>
-            </div>
-        </div>
-      
-
-      
-      
     </div>
   );
 }

@@ -7,27 +7,14 @@ function Navigation() {
     <nav className="navbar">
       <div className="nav-container">
         <Link to="/" className="nav-logo">
+          <span className="logo-icon">✨</span>
           NextGen
         </Link>
         <ul className="nav-menu">
           <li className="nav-item">
-            <Link to="/" className="nav-link">
-              Home
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/property" className="nav-link">
-              Filter
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/services" className="nav-link">
-              Services
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/contact" className="nav-link">
-              Contact
+            <Link to="/property" className="nav-link filter-btn">
+              <span className="filter-icon">⚙️</span>
+              <span className="filter-text">Filter</span>
             </Link>
           </li>
         </ul>

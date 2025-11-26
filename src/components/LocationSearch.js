@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './LocationSearch.css';
 
-const TAB_KEYS = ['buy', 'rent', 'house-prices', 'instant-valuation'];
+const TAB_KEYS = [' '];
 
 function LocationSearch({ placeholder = 'Search for tube stations, postcodes or neighborhoods' }) {
   const location = useLocation();
@@ -44,10 +44,10 @@ function LocationSearch({ placeholder = 'Search for tube stations, postcodes or 
         return;
       }
       // Navigate to valuation page
-      navigate(`/valuation?postcode=${encodeURIComponent(trimmed)}`);
+      navigate(`/Property?postcode=${encodeURIComponent(trimmed)}`);
     } else {
       // Navigate to search page
-      navigate(`/search?tab=${activeTab}&q=${encodeURIComponent(trimmed)}`);
+      navigate(`/Property?postcode=${encodeURIComponent(trimmed)}`);
     }
   }
 

@@ -54,23 +54,7 @@ function LocationSearch({ placeholder = 'Search for tube stations, postcodes or 
   return (
     <div className="location-search">
       <div className="search-card">
-        <ul className="tabs">
-            {TAB_KEYS.map((key) => (
-            <li
-              key={key}
-              role="button"
-              className={`tab ${activeTab === key ? 'active' : ''}`}
-                aria-current={activeTab === key}
-              onClick={() => switchTab(key)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') switchTab(key);
-              }}
-              tabIndex={0}
-            >
-              {key === 'buy' ? 'Buy' : key === 'rent' ? 'Rent' : key === 'house-prices' ? 'House prices' : 'Instant valuation'}
-            </li>
-          ))}
-        </ul>
+       
 
         <div className="search-body">
           <label className="search-label">

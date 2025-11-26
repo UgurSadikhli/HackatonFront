@@ -17,7 +17,14 @@ export default function AppartmentCard({ dataList = [] }) {
             <p className={styles.text}><strong>Location:</strong> {item.location}</p>
             <p className={styles.text}><strong>Units:</strong> {item.number_of_units}</p>
             <p className={styles.text}><strong>Pipelines:</strong> {item.pipelines}</p>
-            <p><strong>Key Dates:</strong> {item.key_dates.join(", ")}</p>
+            <div className={styles.keyDates}>
+              <p><strong>Key Dates:</strong></p>
+              <ul className={styles.datesList}>
+                <li><strong>Enabling Works Start:</strong> {item.key_dates.enablingWorksStart}</li>
+                <li><strong>Housing Start:</strong> {item.key_dates.housingStart}</li>
+                <li><strong>Project Completion:</strong> {item.key_dates.projectCompletion}</li>
+              </ul>
+            </div>
             <p className={styles.description}>{item.description}</p>
           </div>
         </div>
